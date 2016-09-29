@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header" 
+            style="background-image: url('/material/Windows_7_7076_Background_by_Z08_Styles.jpg')">
+            <div class="title">
+                <h1 align="center" 
+                    style="font-family: 'Hanzel Extended'; font-size: xx-large; font-weight: 700; font-style: normal; color: #CCFFFF">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="style1">HR Management</span>&nbsp;
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            &nbsp;</div>
+            <div class="clear hideSkiplink" 
+                style="background-image: url('/material/Windows_7_7076_Background_by_Z08_Styles.jpg')">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    onmenuitemclick="NavigationMenu_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Material Analysis.aspx" Text="Recruitment" 
+                            Value="Recruitment"/>
+                        <asp:MenuItem NavigateUrl="~/Purchase Order.aspx" Text="Employee Management" 
+                            Value="Purchase Order">
+                            <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Order Process.aspx" Text="Feedback" 
+                            Value="Order Process"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Quality of Stocks.aspx" Text="Department" 
+                            Value="Quality of Stocks">
+                            <asp:MenuItem NavigateUrl="~/Dead Stocks.aspx" Text="Dead Stocks" 
+                                Value="Dead Stocks"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Trainning" Value="Manage">
+                            <asp:MenuItem NavigateUrl="~/Stock Movement.aspx" Text="Stock Movement" 
+                                Value="Stock Movement"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Cost Assignment.aspx" Text="Cost Assignment" 
+                                Value="Cost Assignment"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Payment.aspx" Text="Payment" Value="Payment">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Events" Value="Events"></asp:MenuItem>
+                        <asp:MenuItem Text="Payroll" Value="Payroll"></asp:MenuItem>
+                        <asp:MenuItem Text="Resource" Value="Resource"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            &nbsp;&nbsp;
+            </div>
+        </div>
+        <div class="main" 
+            style="background-image: url('/material/Windows_7_7076_Background_by_Z08_Styles.jpg')">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+          
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

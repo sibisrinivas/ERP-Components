@@ -1,0 +1,83 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HRMasterPage.master.cs"
+    Inherits="HRMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head runat="server">
+    <title>Master page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link href="../HR/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript"  src="../Includes/validations.js"></script>
+    <script type ="text/javascript" language=javascript src="../Includes/validations_click.js"></script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <!-- ImageReady Slices (Master page.psd) -->
+    <form id="form1" runat="server">
+        <table width="1000" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2">
+                    <img src="HRimages/Master-page-internal_01.gif" width="1000" height="132" alt=""></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="HRimages/Master-page_02.gif" width="273" height="441" alt=""></td>
+                <td>
+                    <img src="HRimages/Master-page_03.gif" width="727" height="441" alt="">
+                    <asp:Panel ID="Panel2" runat="server" Height="425px" Style="z-index: 0; left: 277px;
+                        position: absolute; top: 137px" Width="721px">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </asp:Panel>
+                    <asp:Panel ID="Panel1" runat="server" Height="425px" Style="z-index: 0; left: 2px;
+                        position: absolute; top: 141px" Width="266px">
+                        <table style="z-index: 0; left: 13px; width: 246px; position: absolute; top: 17px;
+                            height: 398px">
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Font-Strikeout="False" Width="163px"
+                                        Font-Bold="True" Font-Names="Arial" Font-Size="11pt" ForeColor="White" PostBackUrl="~/HR/ChangePassword.aspx">Change Password</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Strikeout="False" Width="211px"
+                                        Font-Bold="True" Font-Names="Arial" Font-Size="11pt" ForeColor="White" PostBackUrl="~/HR/ChangeSkill.aspx">Change Skill Set</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton3" runat="server" Font-Strikeout="False" Font-Bold="True"
+                                        Font-Names="Arial" Font-Size="11pt" ForeColor="White" PostBackUrl="~/HR/ViewResume.aspx"
+                                        Width="129px">View Resumes</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton4" runat="server" Font-Strikeout="False" Width="159px"
+                                        Font-Bold="True" Font-Names="Arial" Font-Size="11pt" ForeColor="White" PostBackUrl="~/HR/PaySlips.aspx">Generate Pay Slips</asp:LinkButton>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton6" runat="server" Font-Strikeout="False" Width="231px"
+                                        Font-Bold="True" Font-Names="Arial" Font-Size="11pt" ForeColor="White" PostBackUrl="~/HR/AttendanceSheet.aspx">Generate Attendance Sheet</asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100px">
+                                    <asp:LinkButton ID="LinkButton7" runat="server" Font-Bold="True" Font-Names="Arial"
+                                        Font-Size="11pt" Font-Strikeout="False" ForeColor="White" PostBackUrl="~/Logout.aspx" OnClick="LinkButton7_Click">Logout</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <img src="HRimages/Master-page_04.gif" width="1000" height="25" alt=""></td>
+            </tr>
+        </table>
+    </form>
+    <!-- End ImageReady Slices -->
+</body>
+</html>
